@@ -1,0 +1,995 @@
+{\rtf1\ansi\deff3\adeflang1025
+{\fonttbl{\f0\froman\fprq2\fcharset0 Times New Roman;}{\f1\froman\fprq2\fcharset2 Symbol;}{\f2\fswiss\fprq2\fcharset0 Arial;}{\f3\froman\fprq2\fcharset0 Liberation Serif{\*\falt Times New Roman};}{\f4\froman\fprq2\fcharset0 Menlo-Regular;}{\f5\fswiss\fprq2\fcharset0 Liberation Sans{\*\falt Arial};}{\f6\fnil\fprq2\fcharset0 Microsoft YaHei;}{\f7\fnil\fprq2\fcharset0 Lucida Sans;}{\f8\fswiss\fprq0\fcharset128 Lucida Sans;}}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet{\s0\snext0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052 Normal;}
+{\s15\sbasedon0\snext16\rtlch\af7\afs28 \ltrch\hich\af5\loch\sb240\sa120\keepn\f5\fs28\dbch\af6 Heading;}
+{\s16\sbasedon0\snext16\loch\sl276\slmult1\sb0\sa140 Text Body;}
+{\s17\sbasedon16\snext17\rtlch\af8 \ltrch\loch\sl276\slmult1\sb0\sa140 List;}
+{\s18\sbasedon0\snext18\rtlch\af8\afs24\ai \ltrch\loch\sb120\sa120\noline\fs24\i Caption;}
+{\s19\sbasedon0\snext19\rtlch\af8 \ltrch\loch\noline Index;}
+}{\*\generator LibreOffice/7.1.2.2$Windows_X86_64 LibreOffice_project/8a45595d069ef5570103caea1b71cc9d82b2aae4}{\info{\creatim\yr0\mo0\dy0\hr0\min0}{\revtim\yr0\mo0\dy0\hr0\min0}{\printim\yr0\mo0\dy0\hr0\min0}}{\*\userprops}\deftab720
+\hyphauto1\viewscale130
+{\*\pgdsctbl
+{\pgdsc0\pgdscuse451\pgwsxn12240\pghsxn15840\marglsxn1440\margrsxn1440\margtsxn1440\margbsxn1440\pgdscnxt0 Default Page Style;}}
+\formshade\paperh15840\paperw12240\margl1440\margr1440\margt1440\margb1440\sectd\sbknone\pgndec\sftnnar\saftnnrlc\sectunlocked1\pgwsxn12240\pghsxn15840\marglsxn1440\margrsxn1440\margtsxn1440\margbsxn1440\ftnbj\ftnstart1\ftnrstcont\ftnnar\aenddoc\aftnrstcont\aftnstart1\aftnnrlc
+{\*\ftnsep\chftnsep}\pgndec\pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# config file for ansible -- https://ansible.com/}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ===============================================}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# nearly all parameters can be overridden in ansible-playbook}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# or with command line flags. ansible will read ANSIBLE_CONFIG,}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ansible.cfg in the current working directory, .ansible.cfg in}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# the home directory or /etc/ansible/ansible.cfg, whichever it}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# finds first}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[defaults]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# some basic default values...}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#inventory\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /etc/ansible/hosts}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#library\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/my_modules/}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#module_utils\u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/my_module_utils/}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#remote_tmp\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = ~/.ansible/tmp}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#local_tmp\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = ~/.ansible/tmp}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#plugin_filters_cfg = /etc/ansible/plugin_filters.yml}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#forks\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = 5}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#poll_interval\u8198\'20 \u8198\'20 = 15}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#sudo_user\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = root}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ask_sudo_pass = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ask_pass\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#transport\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = smart}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#remote_port\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = 22}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#module_lang\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = C}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#module_set_locale = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# plays will gather facts by default, which contain information about}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# the remote system.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# smart - gather by default, but don't regather if already gathered}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# implicit - gather by default, turn off with gather_facts: False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# explicit - do not gather by default, must say gather_facts: True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#gathering = implicit}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This only affects the gathering done by a play's gather_facts directive,}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default gathering retrieves all facts subsets}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# all - gather all subsets}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# network - gather min and network facts}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# hardware - gather hardware facts (longest facts to retrieve)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# virtual - gather min and virtual facts}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# facter - import facts from facter}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ohai - import facts from ohai}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# You can combine them using comma (ex: network,virtual)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# You can negate them using ! (ex: !hardware,!facter,!ohai)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# A minimal set of facts is always gathered.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#gather_subset = all}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# some hardware related facts are collected}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# with a maximum timeout of 10 seconds. This}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# option lets you increase or decrease that}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# timeout to something more suitable for the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# environment.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# gather_timeout = 10}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Ansible facts are available inside the ansible_facts.* dictionary}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# namespace. This setting maintains the behaviour which was the default prior}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# to 2.5, duplicating these variables into the main namespace, each with a}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# prefix of 'ansible_'.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This variable is set to True by default for backwards compatibility. It}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# will be changed to a default of 'False' in a future release.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ansible_facts.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# inject_facts_as_vars = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# additional paths to search for roles in, colon separated}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#roles_path\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /etc/ansible/roles}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# uncomment this to disable SSH key host checking}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#host_key_checking = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# change the default callback, you can only have one 'stdout' type\u8198\'20 \u8198\'20 enabled at a time.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#stdout_callback = skippy}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+## Ansible ships with some plugins that require whitelisting,}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+## this is done to avoid running all of a type by default.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+## These setting lists those that you want enabled for your system.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+## Custom plugins should not need this unless plugin author specifies it.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# enable callback plugins, they can output to stdout but cannot be 'stdout' type.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#callback_whitelist = timer, mail}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Determine whether includes in tasks and handlers are "static" by}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# default. As of 2.0, includes are dynamic by default. Setting these}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# values to True will make includes behave more like they did in the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# 1.x versions.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#task_includes_static = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#handler_includes_static = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Controls if a missing handler for a notification event is an error or a warning}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#error_on_missing_handler = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# change this for alternative sudo implementations}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#sudo_exe = sudo}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# What flags to pass to sudo}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# WARNING: leaving out the defaults might create unexpected behaviours}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#sudo_flags = -H -S -n}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# SSH timeout}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#timeout = 10}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# default user to use for playbooks if user is not specified}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# (/usr/bin/ansible will use current user as default)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+remote_user = ansible}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# logging is off by default unless this path is defined}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if so defined, consider logrotate}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#log_path = /var/log/ansible.log}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# default module name for /usr/bin/ansible}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#module_name = command}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# use this shell for commands executed under sudo}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# you may need to change this to bin/bash in rare instances}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if sudo is constrained}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#executable = /bin/sh}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if inventory variables overlap, does the higher precedence one win}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# or are hash values merged together?\u8198\'20 \u8198\'20 The default is 'replace' but}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# this can also be set to 'merge'.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#hash_behaviour = replace}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default, variables from roles will be visible in the global variable}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# scope. To prevent this, the following option can be enabled, and only}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# tasks and handlers within the role will see the variables there}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#private_role_vars = yes}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# list any Jinja2 extensions to enable here:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#jinja2_extensions = jinja2.ext.do,jinja2.ext.i18n}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if set, always use this private key file for authentication, same as}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if passing --private-key to ansible or ansible-playbook}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#private_key_file = /path/to/file}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# If set, configures the path to the Vault password file as an alternative to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# specifying --vault-password-file on the command line.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#vault_password_file = /path/to/vault_password_file}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# format of string \{\{ ansible_managed \}\} available within Jinja2}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# templates indicates to users editing templates files will be replaced.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# replacing \{file\}, \{host\} and \{uid\} and strftime codes with proper values.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ansible_managed = Ansible managed: \{file\} modified on %Y-%m-%d %H:%M:%S by \{uid\} on \{host\}}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# \{file\}, \{host\}, \{uid\}, and the timestamp can all interfere with idempotence}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# in some situations so the default is a static string:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ansible_managed = Ansible managed}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default, ansible-playbook will display "Skipping [host]" if it determines a task}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# should not be run on a host.\u8198\'20 \u8198\'20 Set this to "False" if you don't want to see these "Skipping"}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# messages. NOTE: the task header will still be shown regardless of whether or not the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# task is skipped.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#display_skipped_hosts = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default, if a task in a playbook does not include a name: field then}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ansible-playbook will construct a header that includes the task's action but}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# not the task's args.\u8198\'20 \u8198\'20 This is a security feature because ansible cannot know}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if the *module* considers an argument to be no_log at the time that the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# header is printed.\u8198\'20 \u8198\'20 If your environment doesn't have a problem securing}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# stdout from ansible-playbook (or you have manually specified no_log in your}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# playbook on all of the tasks where you have secret information) then you can}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# safely set this to True to get more informative messages.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#display_args_to_stdout = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default (as of 1.3), Ansible will raise errors when attempting to dereference}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Jinja2 variables that are not set in templates or action lines. Uncomment this line}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# to revert the behavior to pre-1.3.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#error_on_undefined_vars = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default (as of 1.6), Ansible may display warnings based on the configuration of the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# system running ansible itself. This may include warnings about 3rd party packages or}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# other conditions that should be resolved if possible.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# to disable these warnings, set the following value to False:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#system_warnings = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default (as of 1.4), Ansible may display deprecation warnings for language}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# features that should no longer be used and will be removed in future versions.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# to disable these warnings, set the following value to False:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#deprecation_warnings = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# (as of 1.8), Ansible can optionally warn when usage of the shell and}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# command module appear to be simplified by using a default Ansible module}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# instead.\u8198\'20 \u8198\'20 These warnings can be silenced by adjusting the following}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# setting or adding warn=yes or warn=no to the end of the command line}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# parameter string.\u8198\'20 \u8198\'20 This will for example suggest using the git module}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# instead of shelling out to the git command.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# command_warnings = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set plugin path directories here, separate with colons}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#action_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/action}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#become_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/become}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#cache_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/cache}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#callback_plugins\u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/callback}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#connection_plugins = /usr/share/ansible/plugins/connection}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#lookup_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/lookup}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#inventory_plugins\u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/inventory}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#vars_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/vars}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#filter_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/filter}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#test_plugins\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/test}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#terminal_plugins\u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/terminal}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#strategy_plugins\u8198\'20 \u8198\'20 \u8198\'20 = /usr/share/ansible/plugins/strategy}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default, ansible will use the 'linear' strategy but you may want to try}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# another one}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#strategy = free}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default callbacks are not loaded for /bin/ansible, enable this if you}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# want, for example, a notification or logging callback to also apply to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# /bin/ansible runs}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#bin_ansible_callbacks = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# don't like cows?\u8198\'20 \u8198\'20 that's unfortunate.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set to 1 if you don't want cowsay support or export ANSIBLE_NOCOWS=1}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#nocows = 1}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set which cowsay stencil you'd like to use by default. When set to 'random',}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# a random stencil will be selected for each task. The selection will be filtered}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# against the `cow_whitelist` option below.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#cow_selection = default}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#cow_selection = random}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# when using the 'random' option for cowsay, stencils will be restricted to this list.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# it should be formatted as a comma-separated list with no spaces between names.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# NOTE: line continuations here are for formatting purposes only, as the INI parser}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 in python does not support them.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#cow_whitelist=bud-frogs,bunny,cheese,daemon,default,dragon,elephant-in-snake,elephant,eyes,\\}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 hellokitty,kitty,luke-koala,meow,milk,moofasa,moose,ren,sheep,small,stegosaurus,\\}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 \u8198\'20 stimpy,supermilker,three-eyes,turkey,turtle,tux,udder,vader-koala,vader,www}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# don't like colors either?}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set to 1 if you don't want colors, or export ANSIBLE_NOCOLOR=1}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#nocolor = 1}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if set to a persistent type (not 'memory', for example 'redis') fact values}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# from previous runs in Ansible will be stored.\u8198\'20 \u8198\'20 This may be useful when}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# wanting to use, for example, IP information from one group of servers}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# without having to talk to them in the same playbook run to get their}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# current IP information.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#fact_caching = memory}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#This option tells Ansible where to cache facts. The value is plugin dependent.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#For the jsonfile plugin, it should be a path to a local directory.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#For the redis plugin, the value is a host:port:database triplet: fact_caching_connection = localhost:6379:0}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#fact_caching_connection=/tmp}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# retry files}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# When a playbook fails a .retry file can be created that will be placed in ~/}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# You can enable this feature by setting retry_files_enabled to True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# and you can change the location of the files by setting retry_files_save_path}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#retry_files_enabled = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#retry_files_save_path = ~/.ansible-retry}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# squash actions}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Ansible can optimise actions that call modules with list parameters}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# when looping. Instead of calling the module once per with_ item, the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# module is called once with all items at once. Currently this only works}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# under limited circumstances, and only with parameters named 'name'.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#squash_actions = apk,apt,dnf,homebrew,pacman,pkgng,yum,zypper}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# prevents logging of task data, off by default}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#no_log = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# prevents logging of tasks, but only on the targets, data is still logged on the master/controller}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#no_target_syslog = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# controls whether Ansible will raise an error or warning if a task has no}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# choice but to create world readable temporary files to execute a module on}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# the remote machine.\u8198\'20 \u8198\'20 This option is False by default for security.\u8198\'20 \u8198\'20 Users may}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# turn this on to have behaviour more like Ansible prior to 2.1.x.\u8198\'20 \u8198\'20 See}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# https://docs.ansible.com/ansible/become.html#becoming-an-unprivileged-user}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# for more secure ways to fix this than enabling this option.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#allow_world_readable_tmpfiles = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# controls the compression level of variables sent to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# worker processes. At the default of 0, no compression}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# is used. This value must be an integer from 0 to 9.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#var_compression_level = 9}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# controls what compression method is used for new-style ansible modules when}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# they are sent to the remote system.\u8198\'20 \u8198\'20 The compression types depend on having}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# support compiled into both the controller's python and the client's python.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The names should match with the python Zipfile compression types:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# * ZIP_STORED (no compression. available everywhere)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# * ZIP_DEFLATED (uses zlib, the default)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# These values may be set per host via the ansible_module_compression inventory}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# variable}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#module_compression = 'ZIP_DEFLATED'}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This controls the cutoff point (in bytes) on --diff for files}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set to 0 for unlimited (RAM may suffer!).}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#max_diff_size = 1048576}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This controls how ansible handles multiple --tags and --skip-tags arguments}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# on the CLI.\u8198\'20 \u8198\'20 If this is True then multiple arguments are merged together.\u8198\'20 \u8198\'20 If}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# it is False, then the last specified argument is used and the others are ignored.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This option will be removed in 2.8.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#merge_multiple_cli_flags = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Controls showing custom stats at the end, off by default}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#show_custom_stats = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Controls which files to ignore when using a directory as inventory with}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# possibly multiple sources (both static and dynamic)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#inventory_ignore_extensions = ~, .orig, .bak, .ini, .cfg, .retry, .pyc, .pyo}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This family of modules use an alternative execution path optimized for network appliances}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# only update this setting if you know how this works, otherwise it can break module execution}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#network_group_modules=eos, nxos, ios, iosxr, junos, vyos}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# When enabled, this option allows lookups (via variables like \{\{lookup('foo')\}\} or when used as}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# a loop with `with_foo`) to return data that is not marked "unsafe". This means the data may contain}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# jinja2 templating language which will be run through the templating engine.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ENABLING THIS COULD BE A SECURITY RISK}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#allow_unsafe_lookups = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# set default errors for all plays}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#any_errors_fatal = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[inventory]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# enable inventory plugins, default: 'host_list', 'script', 'auto', 'yaml', 'ini', 'toml'}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#enable_plugins = host_list, virtualbox, yaml, constructed}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ignore these extensions when parsing a directory as inventory source}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ignore_extensions = .pyc, .pyo, .swp, .bak, ~, .rpm, .md, .txt, ~, .orig, .ini, .cfg, .retry}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ignore files matching these patterns when parsing a directory as inventory source}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ignore_patterns=}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# If 'true' unparsed inventory sources become fatal errors, they are warnings otherwise.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#unparsed_is_failed=False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[privilege_escalation]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#become=True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#become_method=sudo}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#become_user=root}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#become_ask_pass=False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[paramiko_connection]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# uncomment this line to cause the paramiko connection plugin to not record new host}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# keys encountered.\u8198\'20 \u8198\'20 Increases performance on new host additions.\u8198\'20 \u8198\'20 Setting works independently of the}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# host key checking setting above.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#record_host_keys=False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# by default, Ansible requests a pseudo-terminal for commands executed under sudo. Uncomment this}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# line to disable this behaviour.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#pty=False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# paramiko will default to looking for SSH keys initially when trying to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# authenticate to remote devices.\u8198\'20 \u8198\'20 This is a problem for some network devices}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# that close the connection after a key failure.\u8198\'20 \u8198\'20 Uncomment this line to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# disable the Paramiko look for keys function}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#look_for_keys = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# When using persistent connections with Paramiko, the connection runs in a}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# background process.\u8198\'20 \u8198\'20 If the host doesn't already have a valid SSH key, by}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# default Ansible will prompt to add the host key.\u8198\'20 \u8198\'20 This will cause connections}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# running in background processes to fail.\u8198\'20 \u8198\'20 Uncomment this line to have}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Paramiko automatically add host keys.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#host_key_auto_add = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[ssh_connection]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# ssh arguments to use}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Leaving off ControlPersist will result in poor performance, so use}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# paramiko on older platforms rather than removing it, -C controls compression use}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ssh_args = -C -o ControlMaster=auto -o ControlPersist=60s}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The base directory for the ControlPath sockets.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# This is the "%(directory)s" in the control_path option}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Example:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# control_path_dir = /tmp/.ansible/cp}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#control_path_dir = ~/.ansible/cp}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The path to use for the ControlPath sockets. This defaults to a hashed string of the hostname,}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# port and username (empty string in the config). The hash mitigates a common problem users}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# found with long hostnames and the conventional %(directory)s/ansible-ssh-%%h-%%p-%%r format.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# In those cases, a "too long for Unix domain socket" ssh error would occur.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Example:}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# control_path = %(directory)s/%%h-%%r}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#control_path =}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Enabling pipelining reduces the number of SSH operations required to}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# execute a module on the remote server. This can result in a significant}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# performance improvement when enabled, however when using "sudo:" you must}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# first disable 'requiretty' in /etc/sudoers}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# By default, this option is disabled to preserve compatibility with}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# sudoers configurations that have requiretty (the default on many distros).}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#pipelining = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Control the mechanism for transferring files (old)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * smart = try sftp and then try scp [default]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * True = use scp only}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * False = use sftp only}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#scp_if_ssh = smart}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Control the mechanism for transferring files (new)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# If set, this will override the scp_if_ssh option}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * sftp\u8198\'20 \u8198\'20 = use sftp to transfer files}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * scp\u8198\'20 \u8198\'20 \u8198\'20 = use scp to transfer files}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * piped = use 'dd' over SSH to transfer files}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#\u8198\'20 \u8198\'20 \u8198\'20 * smart = try sftp, scp, and piped, in that order [default]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#transfer_method = smart}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# if False, sftp will not use batch mode to transfer files. This may cause some}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# types of file transfer failures impossible to catch however, and should}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# only be disabled if your sftp version has problems with batch mode}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#sftp_batch_mode = False}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The -tt argument is passed to ssh when pipelining is not enabled because sudo }
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# requires a tty by default. }
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#usetty = True}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Number of times to retry an SSH connection to a host, in case of UNREACHABLE.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# For each retry attempt, there is an exponential backoff,}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# so after the first attempt there is 1s wait, then 2s, 4s etc. up to 30s (max).}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#retries = 3}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[persistent_connection]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Configures the persistent connection timeout value in seconds.\u8198\'20 \u8198\'20 This value is}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# how long the persistent connection will remain idle before it is destroyed.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# If the connection doesn't receive a request before the timeout value}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# expires, the connection is shutdown. The default value is 30 seconds.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#connect_timeout = 30}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The command timeout value defines the amount of time to wait for a command}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# or RPC call before timing out. The value for the command timeout must}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# be less than the value of the persistent connection idle timeout (connect_timeout)}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The default value is 30 second.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#command_timeout = 30}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[accelerate]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#accelerate_port = 5099}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#accelerate_timeout = 30}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#accelerate_connect_timeout = 5.0}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# The daemon timeout is measured in minutes. This time is measured}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# from the last activity to the accelerate daemon.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#accelerate_daemon_timeout = 30}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# If set to yes, accelerate_multi_key will allow multiple}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# private keys to be uploaded to it, though each user must}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# have access to the system via SSH to add a new key. The default}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# is "no".}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#accelerate_multi_key = yes}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[selinux]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# file systems that require special treatment when dealing with security context}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# the default behaviour that copies the existing context or uses the user default}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# needs to be changed to use the file system dependent context.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#special_context_filesystems=nfs,vboxsf,fuse,ramfs,9p,vfat}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Set this to yes to allow libvirt_lxc connections to work without SELinux.}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#libvirt_lxc_noseclabel = yes}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[colors]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#highlight = white}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#verbose = blue}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#warn = bright purple}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#error = red}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#debug = dark gray}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#deprecate = purple}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#skip = cyan}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#unreachable = red}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#ok = green}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#changed = yellow}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#diff_add = green}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#diff_remove = red}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+#diff_lines = cyan}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+[diff]}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Always print diff when running ( same as always running with -D/--diff )}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# always = no}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar\hich\af4\loch\cf1\fs22\f4\loch
+
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# Set how many context lines to show in diff}
+\par \pard\plain \s0\rtlch\af7\afs24\alang1081 \ltrch\lang1033\langfe2052\hich\af3\loch\nowidctlpar\hyphpar0\ltrpar\cf0\f3\fs24\lang1033\kerning1\dbch\af9\langfe2052\loch\ql\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ltrpar{\hich\af4\loch\cf1\fs22\f4\loch
+# context = 3}
+\par }
