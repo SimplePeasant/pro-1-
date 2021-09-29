@@ -20,8 +20,8 @@ Load balancing ensures that the application will be highly operational in additi
 - _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
 - Load Balancing plays an important security role as computing moves evermore to the cloud. The off-loading function of a load balancer defends an organization against distributed denial-of-service (DDoS) attacks. It does this by shifting attack traffic from the corporate server to a public cloud provider.
 
-• It helps prevent overloading servers as well as optimizes productivity and maximizes uptime.
-• It also creates resiliency allowing rerouting live traffic from one server to another causing it to eliminate single points of failure from attacks such as DDoS attack.
+â€¢ It helps prevent overloading servers as well as optimizes productivity and maximizes uptime.
+â€¢ It also creates resiliency allowing rerouting live traffic from one server to another causing it to eliminate single points of failure from attacks such as DDoS attack.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the  network and system logs.
 - _TODO: What does Filebeat watch for?_
@@ -89,8 +89,7 @@ Run elk_Playbook.yml in same directory (ansible-playbook elk_Playbook.yml)
 then SSH into the Elk-vm to verify the server is up & running.
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
-
-(https://github.com/SimplePeasant/Project-1-/blob/main/Web-29ELK%20vm).png)
+https://github.com/SimplePeasant/pro-1-/blob/main/ScreenShots/Web-29ELK%20vm).png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
