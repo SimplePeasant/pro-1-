@@ -2,7 +2,7 @@ CyberSecurity_BootCamp_Project_1
 
 The files in this repository were used to configure the network depicted below.
 
-(https://drive.google.com/file/d/1ucQUZirL1n_w4yaItGf2NYOfI5R114eU/view?usp=sharing)
+(https://github.com/SimplePeasant/pro-1-/blob/main/Diagram/Project%231.drawio.pdf)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the Project 1 Red Team Network Diagram file may be used to install only certain pieces of it, such as Filebeat.
 
